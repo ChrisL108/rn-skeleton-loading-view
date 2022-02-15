@@ -1,0 +1,22 @@
+{
+  "name": "rn-skeleton-loading-view-example",
+  "displayName": "RnSkeletonLoadingView Example",
+  "expo": {
+    "name": "rn-skeleton-loading-view-example",
+    "slug": "rn-skeleton-loading-view-example",
+    "description": "Example app for rn-skeleton-loading-view",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
