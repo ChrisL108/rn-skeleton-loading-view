@@ -1,18 +1,23 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'rn-skeleton-loading-view';
+import { StyleSheet, Text, View } from 'react-native';
+import { LoadingView } from 'rn-skeleton-loading-view';
+// import { LoadingView } from '../../src';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
   }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <LoadingView loading={loading}>
+        <Text>Here is some content</Text>
+      </LoadingView>
+      <Text>Here is some content</Text>
     </View>
   );
 }

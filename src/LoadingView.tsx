@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { StyleProp, ViewStyle, StyleSheet } from 'react-native';
 import Animated, {
   interpolateColor,

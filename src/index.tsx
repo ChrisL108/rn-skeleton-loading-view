@@ -1,4 +1,3 @@
-export { default as LoadingView } from './LoadingView';
-
-// import LoadingView from './LoadingView';
-// export default LoadingView;
+// export { default } from './LoadingView';
+import LoadingView from './LoadingView';
+export default LoadingView;
