@@ -1,3 +1,4 @@
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
+export { default as LoadingView } from './LoadingView';
+
+// import LoadingView from './LoadingView';
+// export default LoadingView;
