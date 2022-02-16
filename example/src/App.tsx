@@ -1,18 +1,30 @@
 import * as React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'rn-skeleton-loading-view';
+import { LoadingView } from 'rn-skeleton-loading-view';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const [loading1, setLoading1] = React.useState<boolean>(true);
+  const [loading2, setLoading2] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+    setTimeout(() => {
+      setLoading1(false);
+    }, 5000);
+    setTimeout(() => {
+      setLoading2(false);
+    }, 3000);
   }, []);
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <LoadingView loading={loading1} colorArray={['yellow', 'green']}>
+        <Text>I took a little longer</Text>
+        <Text>because I have more data</Text>
+      </LoadingView>
+      <LoadingView loading={loading2} colorArray={['gray', 'white']}>
+        <Text>I loaded faster!</Text>
+      </LoadingView>
     </View>
   );
 }
