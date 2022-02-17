@@ -24,19 +24,6 @@ export default function SkeletonView({
   children?: JSX.Element | JSX.Element[];
   colorArray?: string[];
 }) {
-  const wrapperBorder = useSharedValue(0);
-  const innerOpacity = useSharedValue(0);
-
-  const borderStyles = useAnimatedStyle(() => ({
-    borderColor: interpolateColor(
-      wrapperBorder.value,
-      [0, 1],
-      colorArray || DEFAULT_COLORS
-    ),
-  }));
-  const opacityStyles = useAnimatedStyle(() => ({
-    opacity: innerOpacity.value,
-  }));
   React.useEffect(() => {
     if (loading) {
       wrapperBorder.value = withRepeat(
@@ -50,6 +37,20 @@ export default function SkeletonView({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
+
+  const wrapperBorder = useSharedValue(0);
+  const innerOpacity = useSharedValue(0);
+
+  const borderStyles = useAnimatedStyle(() => ({
+    borderColor: interpolateColor(
+      wrapperBorder.value,
+      [0, 1],
+      colorArray || DEFAULT_COLORS
+    ),
+  }));
+  const opacityStyles = useAnimatedStyle(() => ({
+    opacity: innerOpacity.value,
+  }));
 
   return (
     <Animated.View style={[borderStyles, localStyles.wrapper, wrapperStyles]}>
