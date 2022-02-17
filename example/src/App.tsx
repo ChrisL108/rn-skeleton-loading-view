@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, Text, View } from 'react-native';
-import { LoadingView } from 'rn-skeleton-loading-view';
+import LoadingView from 'rn-skeleton-loading-view';
 // import { LoadingView } from '../../src';
 
 export default function App() {
